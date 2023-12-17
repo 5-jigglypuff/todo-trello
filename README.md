@@ -6,9 +6,7 @@ Todo-Trello is a simple task management application based on Trello, using `pytr
 ## Features
 - **Intuitive Interface**: User-friendly design inspired by Trello for easy task management.
 - **Board Organization**: Create boards to categorize and manage different sets of tasks.
-- **List Management**: Add lists within boards to organize tasks based on their status or priority.
 - **Card System**: Utilize cards to represent individual tasks within lists.
-- **Drag-and-Drop**: Intuitive drag-and-drop functionality for effortless task rearrangement.
 - **User Authentication**: Secure user accounts with authentication to protect task data.
 
 ## Installation

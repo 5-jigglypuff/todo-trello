@@ -48,7 +48,6 @@ async def root():
 async def get_all_tasks(priority_id: str):
     # Fetch all tasks on a list
     tasks = client.list.get_cards_on_list(priority_id)
-    tasks = [task.to_json() for task in tasks]
     return {
         "message": f"Tasks retrieved successfull from {priority_id}.",
         "tasks": tasks
@@ -58,7 +57,7 @@ async def get_all_tasks(priority_id: str):
 @app.get("/task/{task_id}")
 async def get_task(task_id: str):
     # Fetch an existing task
-    task = client.card.get_card(task_id).to_json()
+    task = client.card.get_card(task_id)
     return {
         "message": f"Task {task_id} retrieved successfully",
         "task": task
@@ -79,7 +78,7 @@ async def create_task(priority_id: str, name: str, desc: str):
 @app.put("/task/{task_id}")
 async def update_task(task_id: str, name: str, desc: str):
     # Update an existing task
-    task = client.card.update_card(task_id, name, desc)
+    task = client.card.update_card(task_id, name=name, desc=desc)
     return {
         "message": f"Task {task_id} updated successfully.",
         "task": task,
